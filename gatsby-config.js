@@ -1,30 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: "gatsby ts poc",
+    siteName: `Using TypeScript Example`,
+    exampleUrl: `https://github.com/gatsbyjs/gatsby/tree/master/examples/using-typescript`,
   },
   plugins: [
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-mdx",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    // `gatsby-plugin-typescript` is automatically included in gatsby
+    // You only need to explicitly define it here if you need to configure
+    // specific options in it
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-plugin-typography`,
       options: {
-        name: "images",
-        path: "./src/images/",
+        pathToConfigModule: `src/utils/typography.js`,
+        omitGoogleFont: true,
       },
-      __key: "images",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "pages",
-        path: "./src/pages/",
-      },
-      __key: "pages",
     },
   ],
 };
